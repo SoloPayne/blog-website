@@ -1,0 +1,19 @@
+:root {
+    --blue: #4c03e8;
+    --green: #3cffd1;
+    --white: #ffffff;
+    --black: #131313;
+    --gray: rgb(75, 75, 75);
+    --yellow: #fcbc05;
+
+    /* for content  */
+
+    --gray_c: 75, 75, 75;
+    --white_c: 255, 255, 255;
+    --blue_c: 76, 3, 232;
+    --black_c: 19, 19, 19;
+
+
+    --ft_size: 80px;
+    --lh: 1;
+}
