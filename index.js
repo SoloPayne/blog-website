@@ -9,7 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  const { title, contentType, content, imgCaption, imgLink } = req.body;
+
+  res.render("index.ejs", { title, contentType, content, imgCaption, imgLink });
 });
 
 app.get("/post", (req, res) => {
