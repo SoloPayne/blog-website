@@ -13,17 +13,25 @@
             }
         </style>
         <div class="container">
-            <form action="/submit" method="POST">
+            <h1 class="my-5">
+                <%= heading %>
+            </h1>
+
+            <form action="/blog/post" method="POST">
                 <div class="mb-3">
-                    <label for="title" class="form-label" required>Email address</label>
+                    <label for="title" class="form-label" required>Blog Title</label>
                     <input type="text" class="form-control" id="title" placeholder="Blog title" name="title">
                 </div>
-                <select class="form-select mb-3" aria-label="Default select example" name="contentType" required>
+
+                <label for="blog_type" class="form-label" required>Blog Type</label>
+                <select id="blog_type" class="form-select mb-3" aria-label="Default select example" name="blogType"
+                    required>
                     <option selected>Select blog type</option>
-                    <option value="1">Apps</option>
-                    <option value="2">Gadgets</option>
-                    <option value="3">Science</option>
+                    <option value="Apps">Apps</option>
+                    <option value="Gadgets">Gadgets</option>
+                    <option value="Science">Science</option>
                 </select>
+
                 <div class="mb-3">
                     <label for="content" class="form-label" required>Your content here</label>
                     <textarea class="form-control" id="content" rows="8" name="content"
@@ -37,12 +45,19 @@
 
                 <div class="mb-3">
                     <label for="img-caption" class="form-label">Image caption</label>
-                    <textarea class="form-control" id="img-caption" rows="8" name="imgCaption"
+                    <textarea class="form-control" id="img-caption" rows="2" name="imgCaption"
                         placeholder="Type image caption here"></textarea>
                 </div>
 
+                <div class="mb-3">
+                    <label for="author" class="form-label" required>Written and Submitted by</label>
+                    <input type="text" class="form-control" id="author" placeholder="Author name here" name="author">
+                </div>
 
-                <button type="submit" class="btn btn-secondary btn-lg btn-block my-4 pointer">Publish</button>
+
+                <button type="submit" class="btn btn-secondary btn-lg btn-block my-4 pointer">
+                    <%= submit %>
+                </button>
             </form>
         </div>
     </section>

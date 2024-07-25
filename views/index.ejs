@@ -1,27 +1,38 @@
 <%- include("partials/header.ejs") %>
 
-    <div class="container">
 
+    <div class="container">
         <section class="home" id="top_and_recent">
 
             <div class="row">
                 <div class="col-lg-8">
                     <div>
                         <img src="/images/teksteezeflipped.svg" alt="" class="top_svg" id="lt">
-                        <img src="<%= imgLink %>" alt="" class="top_img">
+                        <img src="<%= posts.slice(-1)[0].imgLink %>" alt="" class="top_img">
                     </div>
 
                     <div class="">
                         <div class="img_text">
                             <p class="custom-underline">
-                                <%= title %>
+                                <%= posts.slice(-1)[0].title %>
                             </p>
                         </div>
                         <div class="img_text_subtitle">
                             <p>
-                                <%= content %>
+                                <%= posts.slice(-1)[0].content %> ...
                             </p>
-                            <%- include("partials/author-name.ejs", {title, imgLink} ) %>
+                            <div class="row" style="white-space: nowrap;">
+                                <div class="col">
+                                    <p class="author_name text-uppercase">
+                                        <%= posts.slice(-1)[0].author %>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="publish_time text-uppercase">
+                                        <%= posts.slice(-1)[0].date %>
+                                    </p>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -31,7 +42,7 @@
 
                     <h2 class="top_post_title">Top Posts</h2>
 
-                    <%- include("partials/widgets.ejs") %>
+                    <%- include("partials/widgets.ejs", posts) %>
 
                 </div>
 
@@ -39,9 +50,9 @@
 
         </section>
 
-        <%- include("partials/content.ejs") %>
+        <%- include("partials/content.ejs", posts) %>
 
-            <%- include("partials/content-cont.ejs") %>
+            <%- include("partials/content-cont.ejs", posts) %>
 
 
     </div>

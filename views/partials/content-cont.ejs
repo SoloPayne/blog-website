@@ -1,5 +1,5 @@
 <section id="content">
-    <div class="row gx-3">
+    <div class="row">
         <div class="col-lg-7">
 
             <div class="rendered_content_news">
@@ -68,7 +68,18 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae magni voluptatum
                                 molestiae
                             </div>
-                            <%- include("author-name.ejs") %>
+                            <div class="row" style="white-space: nowrap;">
+                                <div class="col">
+                                    <p class="author_name text-uppercase">
+                                        <%= posts.author %>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="publish_time text-uppercase">
+                                        <%= posts.date %>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-3 img-adjustment">
                             <div class="img-placeholder">
@@ -93,7 +104,18 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae magni voluptatum
                                 molestiae
                             </div>
-                            <%- include("author-name.ejs") %>
+                            <div class="row" style="white-space: nowrap;">
+                                <div class="col">
+                                    <p class="author_name text-uppercase">
+                                        <%= posts.author %>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="publish_time text-uppercase">
+                                        <%= posts.date %>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-3 img-adjustment">
                             <div class="img-placeholder">
@@ -173,7 +195,18 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae magni voluptatum
                                 molestiae
                             </div>
-                            <%- include("author-name.ejs") %>
+                            <div class="row" style="white-space: nowrap;">
+                                <div class="col">
+                                    <p class="author_name text-uppercase">
+                                        <%= posts.author %>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="publish_time text-uppercase">
+                                        <%= posts.date %>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-3 img-adjustment">
                             <div class="img-placeholder">
@@ -192,7 +225,7 @@
                     <small class="text-uppercase" style="color: var(--white);">Most Popular</small>
 
                     <div class="row">
-                        <div class="col-12 mx-3"><%- include("card-widgets.ejs") %></div>
+                        <div class="col-12 mx-3"><%- include("card-widgets.ejs", posts) %></div>
                     </div>
                 </div>
                 <div class="back_text">
