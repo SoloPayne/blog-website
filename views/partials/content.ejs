@@ -6,239 +6,170 @@
                 <small class="text-uppercase">Refreshed 3 mins ago</small>
             </div>
 
-            <div class="rendered_content_news">
-                <div class="widget">
 
-                    <div class="row mx-1">
-                        <div class="col-10">
-                            <div class="row">
-                                <div class="col-auto mx-3">
-                                    <p class="author_name text-uppercase">
-                                        Solomon Oni
-                                    </p>
-                                </div>
-                                <div class="col-3">
-                                    <p class="publish_time text-uppercase">
-                                        1 hour ago
-                                    </p>
-                                </div>
-                                <div class="col-auto">
-                                    <iconify-icon icon="ph:link" class="link_icon" width="24"></iconify-icon>
+            <div>
+
+                <% let nextPosts=posts.slice(0, posts.length - 5).reverse() %>
+
+                    <% nextPosts.forEach((nextP)=>{ %>
+
+                        <% if(!nextP.blogType){  %>
+                            
+                            <div class="rendered_content_news">
+                            <div class="widget">
+
+                                <div class="row mx-1">
+                                    <div class="col-10">
+                                        <div class="row">
+                                            <div class="col-auto mx-3">
+                                                <p class="author_name text-uppercase">
+                                                    <%= nextP.author %>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <p class="publish_time text-uppercase">
+                                                    <%= nextP.date %>
+                                                </p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <iconify-icon icon="ph:link" class="link_icon"
+                                                    width="24"></iconify-icon>
+                                            </div>
+
+                                        </div>
+                                        <div class="news">
+                                            <div class="news_text">
+                                                <span class="catchy_phrase"><%= nextP.content.slice(0, 30)%></span> <span
+                                                    class="short_info"><%= nextP.content.slice(30, 100)%> ...</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col-12"><iconify-icon
+                                                    icon="material-symbols-light:add-comment-outline-rounded" width="24"
+                                                    class="link_icon"></iconify-icon></div>
+                                            <div class="col-12">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="news_img mx-3 mt-3">
+                                        <figure>
+                                            <img src="/images/forthnight.webp" alt="" style="width: 100%;">
+                                            <figcaption>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                                Voluptates
+                                                sunt
+                                                impedit ducimus facere magni, vitae sequi quas quos repellat vel
+                                                adipisci, fuga
+                                                velit! Error fugiat, provident necessitatibus ab animi tempora!
+                                            </figcaption>
+                                        </figure>
+                                    </div>
                                 </div>
 
+                                <hr class="widget_hr">
                             </div>
-                            <div class="news">
-                                <div class="news_text">
-                                    <span class="catchy_phrase">This is the cathy phrase</span> <span
-                                        class="short_info">Lorem ipsum dolor sit amet,
-                                        consectetur adipisicing elit. Quae magni voluptatum
-                                        molestiae</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-12"><iconify-icon
-                                        icon="material-symbols-light:add-comment-outline-rounded" width="24"
-                                        class="link_icon"></iconify-icon></div>
-                                <div class="col-12">
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="news_img mx-3 mt-3">
-                            <figure>
-                                <img src="/images/forthnight.webp" alt="" style="width: 100%;">
-                                <figcaption>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates sunt
-                                    impedit ducimus facere magni, vitae sequi quas quos repellat vel adipisci, fuga
-                                    velit! Error fugiat, provident necessitatibus ab animi tempora!</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <hr class="widget_hr">
-                </div>
             </div>
+            <% } %>
 
-            <div class="rendered_content">
-                <div class="widget">
+                <% if(nextP.blogType){ %>
+                    <div class="rendered_content">
+                        <div class="widget">
 
-                    <div class="row">
-                        <div class="col-auto slanted_text">APPS</div>
-                        <div class="col-8 badge_text">
-                            <div class="title">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae magni voluptatum
-                                molestiae
-                            </div>
-                            <div class="row" style="white-space: nowrap;">
-                                <div class="col">
-                                    <p class="author_name text-uppercase">
-                                        <%= posts.author %>
-                                    </p>
-                                </div>
-                                <div class="col">
-                                    <p class="publish_time text-uppercase">
-                                        <%= posts.date %>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 img-adjustment">
-                            <div class="img-placeholder">
-                                <img src="/images/forthnight.webp" alt="" class="post_img">
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="widget_hr">
-                </div>
-            </div>
-
-
-
-            <div class="rendered_content">
-                <div class="widget">
-
-                    <div class="row">
-                        <div class="col-auto slanted_text">GADGETS</div>
-                        <div class="col-8 badge_text">
-                            <div class="title">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae magni voluptatum
-                                molestiae
-                            </div>
-                            <div class="row" style="white-space: nowrap;">
-                                <div class="col">
-                                    <p class="author_name text-uppercase">
-                                        <%= posts.author %>
-                                    </p>
-                                </div>
-                                <div class="col">
-                                    <p class="publish_time text-uppercase">
-                                        <%= posts.date %>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 img-adjustment">
-                            <div class="img-placeholder">
-                                <img src="/images/forthnight.webp" alt="" class="post_img">
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="widget_hr">
-                </div>
-            </div>
-
-            <div class="rendered_content_news">
-                <div class="widget">
-
-                    <div class="row mx-1">
-                        <div class="col-10">
                             <div class="row">
-                                <div class="col-auto mx-3">
-                                    <p class="author_name text-uppercase">
-                                        Solomon Oni
-                                    </p>
+                                <div class="col-auto slanted_text"><%= nextP.blogType %></div>
+                                <div class="col-8 badge_text">
+                                    <div class="title">
+                                    <%= nextP.title %>
+                                    </div>
+                                    <div class="row" style="white-space: nowrap;">
+                                        <div class="col">
+                                            <p class="author_name text-uppercase">
+                                                <%= nextP.author %>
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="publish_time text-uppercase">
+                                                <%= nextP.date %>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    <p class="publish_time text-uppercase">
-                                        1 hour ago
-                                    </p>
-                                </div>
-                                <div class="col-auto">
-                                    <iconify-icon icon="ph:link" class="link_icon" width="24"></iconify-icon>
-                                </div>
-
-                            </div>
-                            <div class="news">
-                                <div class="news_text">
-                                    <span class="catchy_phrase">This is the cathy phrase</span> <span
-                                        class="short_info">Lorem ipsum
-                                        dolor sit amet,
-                                        consectetur adipisicing elit. Quae magni voluptatum
-                                        molestiae</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-12"><iconify-icon
-                                        icon="material-symbols-light:add-comment-outline-rounded" width="24"
-                                        class="link_icon"></iconify-icon></div>
-                                <div class="col-12">
-
+                                <div class="col-3 img-adjustment">
+                                    <div class="img-placeholder">
+                                        <img src="/images/forthnight.webp" alt="" class="post_img">
+                                    </div>
                                 </div>
                             </div>
 
-                        </div>
-                        <div class="news_img mx-3 mt-3">
-                            <figure>
-                                <img src="/images/forthnight.webp" alt="" style="width: 100%;">
-                                <figcaption>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates sunt
-                                    impedit ducimus facere magni, vitae sequi quas quos repellat vel adipisci, fuga
-                                    velit! Error fugiat, provident necessitatibus ab animi tempora!</figcaption>
-                            </figure>
+                            <hr class="widget_hr">
                         </div>
                     </div>
-
-                    <hr class="widget_hr">
-                </div>
-            </div>
-
-            <div class="rendered_content">
-                <div class="widget">
-
-                    <div class="row">
-                        <div class="col-auto slanted_text">GADGETS</div>
-                        <div class="col-8 badge_text">
-                            <div class="title">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae magni voluptatum
-                                molestiae
-                            </div>
+                    <% } %>
 
 
-                            <div class="row" style="white-space: nowrap;">
-                                <div class="col">
-                                    <p class="author_name text-uppercase">
-                                        <%= posts.author %>
-                                    </p>
-                                </div>
-                                <div class="col">
-                                    <p class="publish_time text-uppercase">
-                                        <%= posts.date %>
-                                    </p>
-                                </div>
-                            </div>
+                        <% }) %>
+
+        </div>
+
+
+
+
+
+
+        <div class="rendered_content">
+            <div class="widget">
+
+                <div class="row">
+                    <div class="col-auto slanted_text">GADGETS</div>
+                    <div class="col-8 badge_text">
+                        <div class="title">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae magni voluptatum
+                            molestiae
                         </div>
-                        <div class="col-3 img-adjustment">
-                            <div class="img-placeholder">
-                                <img src="/images/forthnight.webp" alt="" class="post_img">
+                        <div class="row" style="white-space: nowrap;">
+                            <div class="col">
+                                <p class="author_name text-uppercase">
+                                    <%= posts.author %>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="publish_time text-uppercase">
+                                    <%= posts.date %>
+                                </p>
                             </div>
                         </div>
                     </div>
-
-                    <hr class="widget_hr">
+                    <div class="col-3 img-adjustment">
+                        <div class="img-placeholder">
+                            <img src="/images/forthnight.webp" alt="" class="post_img">
+                        </div>
+                    </div>
                 </div>
+
+                <hr class="widget_hr">
             </div>
         </div>
-        <div class="col-lg-5">
-            <div class="custom_card">
-                <div>
-                    <small class="text-uppercase" style="color: var(--white);">Most Popular</small>
 
-                    <div class="row">
-                        <div class="col-12 mx-3"><%- include("card-widgets.ejs") %></div>
-                    </div>
-                </div>
-                <div class="back_text">
-                    <h1>Most Popular</h1>
-                </div>
 
+    </div>
+    <div class="col-lg-5">
+        <div class="custom_card">
+            <div>
+                <small class="text-uppercase" style="color: var(--white);">Most Popular</small>
+
+                <div class="row">
+                    <div class="col-12 mx-3"><%- include("card-widgets.ejs") %></div>
+                </div>
             </div>
+            <div class="back_text">
+                <h1>Most Popular</h1>
+            </div>
+
         </div>
+    </div>
     </div>
 </section>

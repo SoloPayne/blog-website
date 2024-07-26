@@ -47,6 +47,7 @@ let posts = [
     content:
       "Renewable energy technologies are rapidly advancing and reshaping how we generate power. Innovations in solar, wind, and hydroelectric systems promise to make renewable energy more efficient and accessible. This article discusses the latest advancements and their potential impact on the global energy landscape.",
     author: "Emily Johnson",
+    blogType: "APPS",
     imgLink:
       "https://images.unsplash.com/photo-1604328790190-0b11a865f6b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8UmVub3dhYmxlIEVuZXJneXxlbnwwfHx8fDEw",
     date: "2023-08-15T12:00:00Z",
@@ -57,6 +58,7 @@ let posts = [
     content:
       "Quantum computing is on the brink of revolutionizing the field of computing by solving problems that are currently intractable for classical computers. This post delves into the basics of quantum computing, its potential applications, and the challenges that researchers face.",
     author: "Daniel Martinez",
+    blogType: "APPS",
     imgLink:
       "https://images.unsplash.com/photo-1581092580512-342ea1f6d7d0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFF1YW50dW0lMjBDb21wdXRpbmclMjB8ZW58MHx8fDEw",
     date: "2023-08-20T15:30:00Z",
@@ -67,6 +69,7 @@ let posts = [
     content:
       "Mobile technology has seen incredible advancements over the past decade, from the introduction of smartphones to the latest 5G networks. This article explores the evolution of mobile technology and what we can expect in the future.",
     author: "Sophia Lee",
+    blogType: "GADGETS",
     imgLink:
       "https://images.unsplash.com/photo-1573497491200-bc75d6ad4477?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TW9iaWxlJTIwVGVjaG5vbG9neXxlbnwwfHx8fDEw",
     date: "2023-08-25T11:00:00Z",
@@ -97,6 +100,7 @@ let posts = [
     content:
       "Smart home technologies are revolutionizing how we interact with our living spaces, offering increased convenience, security, and energy efficiency. This post highlights the benefits of smart home devices and their impact on everyday life.",
     author: "Liam Davis",
+    blogType: "SCIENCE",
     imgLink:
       "https://images.unsplash.com/photo-1547030076-2b25d1b1c1e7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fFNtYXJ0JTIwSG9tZXxlbnwwfHx8fDEw",
     date: "2023-09-10T14:15:00Z",
@@ -107,6 +111,7 @@ let posts = [
     content:
       "The Internet of Things (IoT) is connecting everyday objects to the internet, enabling them to send and receive data. This article explores the concept of IoT, its applications, and the impact it has on various industries.",
     author: "Emma Wilson",
+    blogType: "SCIENCE",
     imgLink:
       "https://images.unsplash.com/photo-1532619158827-439a1cf06b9e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SW50ZXJuZXQlMjBvZiUyMFRoaW5ncyxlbnwwfHx8fDEw",
     date: "2023-09-15T10:30:00Z",
@@ -207,16 +212,14 @@ let posts = [
     content:
       "In the digital age, data privacy is a critical concern for individuals and organizations alike. This article discusses the importance of data privacy, current challenges, and best practices for protecting sensitive information.",
     author: "Sofia Young",
-    blogType:  "Apps",
+    blogType: "APPS",
     imgLink:
       "https://images.unsplash.com/photo-1673255745677-e36f618550d1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEFpfGVufDB8fDB8fHww",
     date: "2023-11-05T15:30:00Z",
   },
 ];
 
-
 let lastId = parseInt(posts.slice(-1)[0].id);
-
 
 // GET all posts
 app.get("/", (req, res) => {
